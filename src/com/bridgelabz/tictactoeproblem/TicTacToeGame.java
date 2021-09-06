@@ -55,12 +55,26 @@ public class TicTacToeGame {
 			}
 	}
 	
+	public static void decideFirstPlayer() {
 	
+		System.out.println("enter user's toss choice head 0 and tail 1");
+		int tossChoice=scanner.nextInt();
+		int tossResult=(int)Math.floor(Math.random()*10)%2;
+		
+		if(tossResult==tossChoice) {
+			System.out.println("user play first");
+		}
+		else {
+			System.out.println("Computer plays first");
+		}
+	}
+
 	public static void main(String[] args) {
 		createBoard();
 		inputChoice();
 		showBoard();
 		playerMove();
+		decideFirstPlayer();
 		
 	}
 }
