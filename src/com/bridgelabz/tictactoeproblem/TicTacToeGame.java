@@ -26,11 +26,23 @@ public class TicTacToeGame {
 			
 		}
 	}
+	public static void showBoard() {
+		int count =0;
+		for(int index=1;index<=9;index++) {
+			if(count==3) {
+				count=0;
+				System.out.println();
+			}
+			++count;
+			System.out.print((board[index])+"|");
+		}
+	}
 	
 	
 	public static void main(String[] args) {
 		createBoard();
 		inputChoice();
+		showBoard();
 		
 	}
 }
