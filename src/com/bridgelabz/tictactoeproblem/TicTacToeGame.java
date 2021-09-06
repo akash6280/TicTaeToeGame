@@ -38,11 +38,24 @@ public class TicTacToeGame {
 		}
 	}
 	
+	public  static void playerMove() {
+		System.out.println("Enter position form 1 to 9 to make your move");
+		int position = scanner.nextInt();
+		if(board[position]==' ') {
+			board[position] = playerLetter;
+		}
+		else{
+			System.out.println("This position is filled");
+			playerMove();
+			}
+	}
+	
 	
 	public static void main(String[] args) {
 		createBoard();
 		inputChoice();
 		showBoard();
+		playerMove();
 		
 	}
 }
