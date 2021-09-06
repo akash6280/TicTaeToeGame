@@ -15,10 +15,10 @@ public class TicTacToeGame {
 	}
 	public static void inputChoice() {
 		System.out.println("Enter user choice");
-		char choice=scanner.next().charAt(0);
+		char choice=scanner.next().toUpperCase().charAt(0);
 		if(choice=='X') {
 			playerLetter=choice;
-			computerLetter='O';
+			computerLetter='O' ;
 		}
 		else{
 			playerLetter=choice;
