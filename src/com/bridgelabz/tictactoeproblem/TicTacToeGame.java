@@ -41,6 +41,11 @@ public class TicTacToeGame {
 	public  static void playerMove() {
 		System.out.println("Enter position form 1 to 9 to make your move");
 		int position = scanner.nextInt();
+		
+		if (position<1 || position>9) {
+			System.out.println("Wrong input");
+			playerMove();
+		}
 		if(board[position]==' ') {
 			board[position] = playerLetter;
 		}
