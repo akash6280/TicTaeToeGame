@@ -88,7 +88,28 @@ public class TicTacToeGame {
 		currentPlayer = (currentPlayer=='X')?'0':'X';
 	}
 	
-	
+	public static void nextMoveWin() {
+		int winningCount=0;
+		int emptyPlace=0;
+		int emptyPosition=0;
+		for(int i=0;i<8;i++) {
+			emptyPlace=0;
+			for(int j=0;j<3;j++) {
+				if(board[winningPositions[i][j]] == currentPlayer)
+					winningCount++;
+				if(board[winningPositions[i][j]] == ' ')
+					{
+					emptyPlace++;
+				    emptyPosition=j;
+					}
+			}
+			if(winningCount==2 && emptyPlace==1) {
+				board[winningPositions[i][emptyPosition]]=currentPlayer;
+				break;
+			}
+			
+		}
+	}
 
 	public static void main(String[] args) {
 		createBoard();
@@ -97,6 +118,6 @@ public class TicTacToeGame {
 		playerMove();
 		decideFirstPlayer();
 		checkWinner();
-		
+		nextMoveWin();
 	}
 }
